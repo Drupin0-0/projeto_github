@@ -32,7 +32,9 @@ body {
     width: 100%;
     height: 55vh;
 
-    background-image: url("img/aeroskate.png");
+    .hero-section {
+    background-image: url("img/ChatGPT Image 19 de jun. de 2026, 10_00_16.png");
+}
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
