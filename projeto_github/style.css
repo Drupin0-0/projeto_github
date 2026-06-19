@@ -1,11 +1,14 @@
 :root {
-    --bg-color: #0b0f19;
-    --card-bg: #161f30;
-    --text-main: #f3f4f6;
-    --text-muted: #9ca3af;
-    --primary-neon: #00f2fe;
-    --accent-glow: #4facfe;
-    --border-color: #233554;
+    --bg-dark-deep: #0d1117;       
+    --bg-card-dark: #161b22;       
+    --text-primary: #f0f6fc;       
+    --text-secondary: #8b949e;     
+    
+    --blue-drop-glow: #79d1ff;     
+    --blue-drop-main: #58a6ff;     
+    --blue-drop-dark: #1f6feb;     
+    
+    --border-dark: #30363d;        
 }
 
 * {
@@ -15,102 +18,97 @@
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-dark-deep);
+    color: var(--text-primary);
     line-height: 1.6;
-    padding: 20px;
+    padding: 24px;
 }
 
-/* Layout Container Principal */
 .container {
     width: 100%;
     max-width: 650px;
     margin: 0 auto;
 }
 
-/* Linhas Divisórias */
 .divider {
     border: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
-    margin: 35px 0;
+    background: linear-gradient(90deg, transparent, var(--border-dark), transparent);
+    margin: 40px 0;
 }
 
-/* Cabeçalho */
 .main-header {
     text-align: center;
     margin-top: 20px;
 }
 
 .main-title {
-    font-size: 2.8rem;
-    background: linear-gradient(135deg, var(--primary-neon), var(--accent-glow));
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 1px;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+    letter-spacing: -0.5px;
 }
 
 .main-subtitle {
-    font-size: 1.2rem;
-    color: var(--primary-neon);
+    font-size: 1.15rem;
+    color: var(--blue-drop-glow);
     font-weight: 500;
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
-/* Textos e Títulos de Seção */
 .section-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: #ffffff;
     margin-bottom: 12px;
 }
 
 .subsection-title {
-    font-size: 1.2rem;
-    color: var(--accent-glow);
+    font-size: 1.25rem;
+    color: var(--blue-drop-main);
     margin: 25px 0 15px 0;
 }
 
 .description {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     font-size: 1rem;
 }
 
-/* Lista de Benefícios (Grid) */
 .benefits-list {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 15px;
-    margin-top: 15px;
+    gap: 16px;
+    margin-top: 20px;
 }
 
 .benefit-item {
-    background-color: var(--card-bg);
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: var(--bg-card-dark);
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid var(--border-dark);
+    transition: border-color 0.3s ease, transform 0.2s ease;
 }
 
 .benefit-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 242, 254, 0.15);
+    transform: translateY(-2px);
+    border-color: var(--blue-drop-main);
 }
 
 .benefit-highlight {
-    color: var(--primary-neon);
+    color: var(--blue-drop-glow);
     display: block;
     margin-bottom: 4px;
+    font-size: 1.05rem;
 }
 
-/* Formulário de Reserva */
 .form-reserve {
-    background-color: var(--card-bg);
-    padding: 30px;
+    background-color: var(--bg-card-dark);
+    padding: 32px;
     border-radius: 12px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    margin-top: 20px;
+    border: 1px solid var(--border-dark);
+    margin-top: 24px;
 }
 
 .form-group {
@@ -121,32 +119,33 @@ body {
     display: block;
     font-size: 0.9rem;
     font-weight: 600;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
+    color: var(--text-primary);
+    margin-bottom: 8px;
 }
 
-/* Campos de Entrada e Seleção */
 .form-input,
 .form-select {
     width: 100%;
-    padding: 12px;
-    background-color: var(--bg-color);
-    border: 1px solid var(--border-color);
+    padding: 12px 16px;
+    background-color: var(--bg-dark-deep);
+    border: 1px solid var(--border-dark);
     border-radius: 6px;
-    color: #ffffff;
+    color: var(--text-primary);
     font-size: 1rem;
     transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input::placeholder {
+    color: #484f58;
 }
 
 .form-input:focus,
 .form-select:focus {
     outline: none;
-    border-color: var(--primary-neon);
-    box-shadow: 0 0 8px rgba(0, 242, 254, 0.3);
+    border-color: var(--blue-drop-main);
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
 }
 
-/* Botão Submit */
 .form-group-submit {
     margin-bottom: 0;
 }
@@ -154,41 +153,37 @@ body {
 .btn-submit {
     width: 100%;
     padding: 14px;
-    background: linear-gradient(135deg, var(--primary-neon), var(--accent-glow));
-    border: none;
+    background-color: var(--blue-drop-main);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 6px;
-    color: #0b0f19;
+    color: var(--bg-dark-deep);
     font-size: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 700;
     cursor: pointer;
-    transition: opacity 0.2s, transform 0.1s;
+    transition: background-color 0.2s, transform 0.1s;
     margin-top: 10px;
 }
 
 .btn-submit:hover {
-    opacity: 0.9;
+    background-color: var(--blue-drop-glow);
 }
 
 .btn-submit:active {
-    transform: scale(0.98);
+    transform: scale(0.99);
 }
 
-/* Rodapé */
 .main-footer {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .footer-text {
     font-size: 0.8rem;
-    color: var(--text-muted);
+    color: var(--text-secondary);
 }
 
-/* Telas Responsivas (Mobile) */
 @media (max-width: 480px) {
-    .main-title { font-size: 2.2rem; }
+    .main-title { font-size: 2.4rem; }
     .form-reserve { padding: 20px; }
-    body { padding: 15px; }
+    body { padding: 16px; }
 }
