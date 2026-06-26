@@ -1,0 +1,22 @@
+name: Commit Check
+
+on:
+  push:
+    branches:
+      - design
+      - conteudo
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validar mensagem
+        run: |
+          MESSAGE="${{ github.event.head_commit.message }}"
+
+          if [[ ! "$MESSAGE" =~ ^(feat|fix|docs|style|refactor|test|chore): ]]; then
+            echo "Commit inválido."
+            echo "Exemplo: feat: criar tela de login"
+            exit 1
+          fi
