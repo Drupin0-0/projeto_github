@@ -1,0 +1,35 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Compactar arquivos da subpasta
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # A mágica está aqui: ele vai ler direto de dentro da sua subpasta!
+          path: './projeto_github'
+
+      - name: Fazer o Deploy para o GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
