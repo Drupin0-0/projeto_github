@@ -8,26 +8,47 @@
 </head>
 <body>
 
-    <main class="container">
-        <header class="main-header">
-            <h1 class="main-title">AeroSkate 3000</h1>
-            <p class="main-subtitle">O primeiro skate que flutua de verdade no ar!</p>
-        </header>
+    <section class="hero-section">
+        <div class="hero-overlay">
+            <h1 class="hero-title">AeroSkate 3000</h1>
+            <p class="hero-subtitle">O primeiro skate que flutua de verdade no ar!</p>
+        </div>
+    </section>
 
-        <hr class="divider">
+    <main class="container">
 
         <section class="product-intro">
             <h2 class="section-title">Esqueça as rodas. O futuro não tem chão!</h2>
-            <p class="description">Você já imaginou andar por aí voando a 1 metro do chão? Com o AeroSkate 3000 isso é possível. Ele usa tecnologia magnética para flutuar com estabilidade e segurança para qualquer pessoa andar.</p>
+            <p class="description">
+                Você já imaginou andar por aí voando a 1 metro do chão? 
+                Com o AeroSkate 3000 isso é possível. Ele usa tecnologia 
+                magnética para flutuar com estabilidade e segurança para 
+                qualquer pessoa andar.
+            </p>
         </section>
+
+        <hr class="divider">
 
         <section class="benefits-section">
             <h3 class="subsection-title">Por que você precisa de um AeroSkate?</h3>
+
             <ul class="benefits-list">
-                <li class="benefit-item"><strong class="benefit-highlight">Velocidade:</strong> Chega até 40 km/h de forma segura.</li>
-                <li class="benefit-item"><strong class="benefit-highlight">Bateria Forte:</strong> Anda por até 2 horas direto com uma única carga.</li>
-                <li class="benefit-item"><strong class="benefit-highlight">Fácil de Andar:</strong> Ele se equilibra sozinho com sensores inteligentes.</li>
-                <li class="benefit-item"><strong class="benefit-highlight">Muito Leve:</strong> Pesa quase o mesmo que um skate de madeira normal.</li>
+                <li class="benefit-item">
+                    <strong class="benefit-highlight">Velocidade:</strong> 
+                    Chega até 40 km/h de forma segura.
+                </li>
+                <li class="benefit-item">
+                    <strong class="benefit-highlight">Bateria Forte:</strong> 
+                    Anda por até 2 horas direto com uma única carga.
+                </li>
+                <li class="benefit-item">
+                    <strong class="benefit-highlight">Fácil de Andar:</strong> 
+                    Ele se equilibra sozinho com sensores inteligentes.
+                </li>
+                <li class="benefit-item">
+                    <strong class="benefit-highlight">Muito Leve:</strong> 
+                    Pesa quase o mesmo que um skate de madeira normal.
+                </li>
             </ul>
         </section>
 
@@ -35,40 +56,51 @@
 
         <section class="sales-section">
             <h2 class="section-title">Faça sua Reserva na Pré-Venda</h2>
-            <p class="description">Preencha os campos abaixo para garantir o seu com preço promocional de lançamento.</p>
+
+            <p class="description">
+                Preencha os campos abaixo para garantir o seu com preço 
+                promocional de lançamento.
+            </p>
 
             <form action="#" method="POST" class="form-reserve">
-                <p class="form-group">
+
+                <div class="form-group">
                     <label for="nome" class="form-label">Nome Completo:</label>
-                    <input type="text" id="nome" class="form-input" placeholder="Digite seu nome" required>
-                </p>
+                    <input type="text" id="nome" name="nome" class="form-input" 
+                           placeholder="Digite seu nome" required>
+                </div>
 
-                <p class="form-group">
+                <div class="form-group">
                     <label for="email" class="form-label">E-mail:</label>
-                    <input type="email" id="email" class="form-input" placeholder="seu@email.com" required>
-                </p>
+                    <input type="email" id="email" name="email" class="form-input" 
+                           placeholder="seu@email.com" required>
+                </div>
 
-                <p class="form-group">
+                <div class="form-group">
                     <label for="cor" class="form-label">Escolha a cor do LED:</label>
-                    <select id="cor" class="form-select">
-                        <option>Azul Neon</option>
-                        <option>Verde Laser</option>
-                        <option>Vermelho Futurista</option>
+                    <select id="cor" name="cor_led" class="form-select">
+                        <option value="azul">Azul Neon</option>
+                        <option value="verde">Verde Laser</option>
+                        <option value="vermelho">Vermelho Futurista</option>
                     </select>
-                </p>
+                </div>
 
-                <p class="form-group-submit">
-                    <input type="submit" class="btn-submit" value="Quero Garantir Meu Desconto">
-                </p>
+                <div class="form-group-submit">
+                    <button type="submit" class="btn-submit">
+                        Quero Garantir Meu Desconto
+                    </button>
+                </div>
+
             </form>
         </section>
 
-        <hr class="divider">
-
-        <footer class="main-footer">
-            <p class="footer-text">&copy; 2026 AeroSkate 3000 - Todos os direitos reservados.</p>
-        </footer>
     </main>
+
+    <footer class="main-footer">
+        <p class="footer-text">
+            &copy; 2026 AeroSkate 3000 - Todos os direitos reservados.
+        </p>
+    </footer>
 
 </body>
 </html>

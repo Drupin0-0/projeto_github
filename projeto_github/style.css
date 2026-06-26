@@ -1,14 +1,15 @@
+css
 :root {
-    --bg-dark-deep: #0d1117;       
-    --bg-card-dark: #161b22;       
-    --text-primary: #f0f6fc;       
-    --text-secondary: #8b949e;     
-    
-    --blue-drop-glow: #79d1ff;     
-    --blue-drop-main: #58a6ff;     
-    --blue-drop-dark: #1f6feb;     
-    
-    --border-dark: #30363d;        
+    --bg-dark-deep: #0d1117;
+    --bg-card-dark: #161b22;
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+
+    --blue-drop-glow: #79d1ff;
+    --blue-drop-main: #58a6ff;
+    --blue-drop-dark: #1f6feb;
+
+    --border-dark: #30363d;
 }
 
 * {
@@ -22,19 +23,99 @@ body {
     background-color: var(--bg-dark-deep);
     color: var(--text-primary);
     line-height: 1.6;
-    padding: 24px;
+    padding: 0;
 }
+
+/* HERO */
+
+.hero-section {
+    width: 100%;
+    height: 55vh;
+
+    .hero-section {
+    background-image: url("img/ChatGPT Image 19 de jun. de 2026, 10_00_16.png");
+}
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 50px;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(13, 17, 23, 0.15),
+        rgba(13, 17, 23, 0.90)
+    );
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: #ffffff;
+
+    text-shadow:
+        0 0 15px rgba(121, 209, 255, 0.8),
+        0 0 40px rgba(88, 166, 255, 0.5);
+}
+
+.hero-subtitle {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: var(--blue-drop-glow);
+}
+
+/* CONTAINER */
 
 .container {
     width: 100%;
     max-width: 650px;
-    margin: 0 auto;
+
+    margin: -80px auto 0 auto;
+
+    background-color: var(--bg-dark-deep);
+
+    border: 1px solid var(--border-dark);
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    position: relative;
+    z-index: 5;
+
+    box-shadow:
+        0 0 30px rgba(0, 0, 0, 0.4),
+        0 0 50px rgba(88, 166, 255, 0.08);
 }
 
 .divider {
     border: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border-dark), transparent);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--border-dark),
+        transparent
+    );
     margin: 40px 0;
 }
 
@@ -182,8 +263,37 @@ body {
     color: var(--text-secondary);
 }
 
+@media (max-width: 768px) {
+
+    .hero-section {
+        height: 45vh;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .container {
+        margin-top: -40px;
+        padding: 20px;
+    }
+}
+
 @media (max-width: 480px) {
-    .main-title { font-size: 2.4rem; }
-    .form-reserve { padding: 20px; }
-    body { padding: 16px; }
+
+    .main-title {
+        font-size: 2.4rem;
+    }
+
+    .form-reserve {
+        padding: 20px;
+    }
+
+    .hero-title {
+        font-size: 2.3rem;
+    }
 }
