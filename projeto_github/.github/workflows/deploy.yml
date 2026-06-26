@@ -5,12 +5,32 @@ on:
     branches:
       - main
 
+# Dá permissão para o script ler o código e atualizar o GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout do código
+        uses: actions/checkout@v4
 
-      - name: Deploy
-        run: echo "Realizando deploy..."
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Compactar arquivos da raiz
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Indica que queremos subir os arquivos direto da raiz (onde está o index.html)
+          path: '.'
+
+      - name: Fazer o Deploy para o GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
